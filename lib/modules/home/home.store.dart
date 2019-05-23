@@ -1,7 +1,7 @@
 import 'package:mobx/mobx.dart';
 
 import 'home.api.dart';
-import 'home.model.dart';
+import 'home.dart';
 
 part 'home.store.g.dart';
 
