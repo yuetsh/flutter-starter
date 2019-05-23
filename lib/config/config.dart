@@ -1,3 +1,4 @@
+import 'package:flutter_starter/app.dart';
 import 'package:flutter_starter/main.dart';
 
 enum EnvType { DEVELOPMENT, TEST, STAGING, PRODUCTION }
@@ -14,6 +15,8 @@ abstract class Config {
   }
 
   void _init() {
+    final app = App();
+    app.onCreate();
     mainDelegate();
   }
 }

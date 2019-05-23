@@ -4,8 +4,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_starter/config/config.dart';
 import 'package:flutter_starter/modules/entrance/entrance.store.dart';
 import 'package:flutter_starter/modules/home/home.store.dart';
-import 'package:flutter_starter/utils/application.dart';
 import 'package:flutter_starter/utils/routes.dart';
+import 'package:flutter_starter/utils/service.dart';
 
 class HomeIndex extends StatelessWidget {
   @override
@@ -33,7 +33,7 @@ class HomeIndex extends StatelessWidget {
           CupertinoButton(
             child: Text('去设置页'),
             onPressed: () {
-              Application.router.navigateTo(context, Routes.settings,
+              Service.router.navigateTo(context, Routes.settings,
                   transition: TransitionType.inFromRight);
             },
           ),

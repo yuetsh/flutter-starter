@@ -1,26 +1,15 @@
-import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/utils/application.dart';
-import 'package:flutter_starter/utils/http.dart';
-import 'package:flutter_starter/utils/routes.dart';
+import 'package:flutter_starter/utils/service.dart';
 import 'package:flutter_starter/widgets/shared/entrance/index.dart';
 
-void mainDelegate() => runApp(MyApp());
+void mainDelegate() => runApp(Main());
 
-class MyApp extends StatelessWidget {
-  MyApp() {
-    final router = new Router();
-    final http = new Http();
-    Routes.configureRoutes(router);
-    Application.router = router;
-    Application.http = http.dio;
-  }
-
+class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: EntranceIndex(),
-      onGenerateRoute: Application.router.generator,
+      onGenerateRoute: Service.router.generator,
     );
   }
 }
