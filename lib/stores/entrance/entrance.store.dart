@@ -1,6 +1,6 @@
 import 'package:mobx/mobx.dart';
 
-part 'entrance_store.g.dart';
+part 'entrance.store.g.dart';
 
 class EntranceStore = _EntranceStore with _$EntranceStore;
 

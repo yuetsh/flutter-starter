@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_starter/screens/category_screen.dart';
-import 'package:flutter_starter/screens/home_screen.dart';
-import 'package:flutter_starter/screens/user_center_screen.dart';
-import 'package:flutter_starter/stores/entrance/entrance_store.dart';
+import 'package:flutter_starter/screens/category.screen.dart';
+import 'package:flutter_starter/screens/home.screen.dart';
+import 'package:flutter_starter/screens/user_center.screen.dart';
+import 'package:flutter_starter/stores/entrance/entrance.store.dart';
 import 'package:flutter_starter/widgets/app_bar/category_app_bar.dart';
 import 'package:flutter_starter/widgets/app_bar/home_app_bar.dart';
 import 'package:flutter_starter/widgets/app_bar/user_center_app_bar.dart';
@@ -33,7 +33,7 @@ class _EntranceState extends State<EntranceIndex> {
       builder: (_) => Scaffold(
             appBar: PreferredSize(
               child: _appBars[entranceStore.index],
-              preferredSize: Size.fromHeight(44.0),
+              preferredSize: Size.fromHeight(56.0),
             ),
             body: IndexedStack(
               index: entranceStore.index,
