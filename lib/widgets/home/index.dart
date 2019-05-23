@@ -1,6 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_starter/config/config.dart';
 import 'package:flutter_starter/modules/entrance/entrance.store.dart';
 import 'package:flutter_starter/modules/home/home.store.dart';
 import 'package:flutter_starter/utils/application.dart';
@@ -12,7 +13,7 @@ class HomeIndex extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          Text('首页'),
+          Text('首页:${Config.value.envType}'),
           CupertinoButton(
             child: Text('去分类页'),
             onPressed: () {

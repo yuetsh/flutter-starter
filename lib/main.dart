@@ -5,7 +5,7 @@ import 'package:flutter_starter/utils/http.dart';
 import 'package:flutter_starter/utils/routes.dart';
 import 'package:flutter_starter/widgets/shared/entrance/index.dart';
 
-void main() => runApp(MyApp());
+void mainDelegate() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   MyApp() {
@@ -19,10 +19,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: EntranceIndex(),
       onGenerateRoute: Application.router.generator,
     );
