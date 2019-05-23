@@ -16,7 +16,7 @@ class App {
   onDestroy() {}
 
   _initRouter() {
-    final router = new Router();
+    final router = Router();
     Routes.configureRoutes(router);
     Service.router = router;
   }
