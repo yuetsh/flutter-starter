@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_starter/screens/category.screen.dart';
-import 'package:flutter_starter/screens/home.screen.dart';
-import 'package:flutter_starter/screens/user_center.screen.dart';
 import 'package:flutter_starter/stores/entrance/entrance.store.dart';
-import 'package:flutter_starter/widgets/app_bar/category_app_bar.dart';
-import 'package:flutter_starter/widgets/app_bar/home_app_bar.dart';
-import 'package:flutter_starter/widgets/app_bar/user_center_app_bar.dart';
+import 'package:flutter_starter/widgets//category/index.dart';
+import 'package:flutter_starter/widgets/home/index.dart';
+import 'package:flutter_starter/widgets/nav_bar/category.dart';
+import 'package:flutter_starter/widgets/nav_bar/home.dart';
+import 'package:flutter_starter/widgets/nav_bar/user_center.dart';
+import 'package:flutter_starter/widgets/user_center/index.dart';
 
 class _EntranceState extends State<EntranceIndex> {
-  List<Widget> _appBars = [HomeAppBar(), CategoryAppBar(), UserCenterAppBar()];
-  List<Widget> _screens = [HomeScreen(), CategoryScreen(), UserCenterScreen()];
+  List<Widget> _navBars = [HomeNavBar(), CategoryNavBar(), UserCenterNavBar()];
+  List<Widget> _screens = [HomeIndex(), CategoryIndex(), UserCenterIndex()];
   List<BottomNavigationBarItem> _navItems = [
     BottomNavigationBarItem(
       icon: Icon(Icons.home),
@@ -27,26 +27,27 @@ class _EntranceState extends State<EntranceIndex> {
     ),
   ];
 
-  @override
-  Widget build(BuildContext context) {
-    return Observer(
-      builder: (_) => Scaffold(
-            appBar: PreferredSize(
-              child: _appBars[entranceStore.index],
-              preferredSize: Size.fromHeight(56.0),
-            ),
-            body: IndexedStack(
-              index: entranceStore.index,
-              children: _screens,
-            ),
-            bottomNavigationBar: CupertinoTabBar(
-              items: _navItems,
-              currentIndex: entranceStore.index,
-              onTap: entranceStore.onTap,
-            ),
-          ),
+  Widget builder(BuildContext context) {
+    return CupertinoTabScaffold(
+      tabBar: CupertinoTabBar(
+        items: _navItems,
+        onTap: entranceStore.onTap,
+      ),
+      tabBuilder: (BuildContext context, int index) {
+        return CupertinoTabView(
+          builder: (BuildContext context) {
+            return CupertinoPageScaffold(
+              child: _screens[entranceStore.index],
+              navigationBar: _navBars[entranceStore.index],
+            );
+          },
+        );
+      },
     );
   }
+
+  @override
+  Widget build(BuildContext context) => Observer(builder: builder);
 }
 
 class EntranceIndex extends StatefulWidget {
