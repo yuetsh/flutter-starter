@@ -1,5 +1,6 @@
-import 'package:flutter_starter/model/home/home.dart';
-import 'package:flutter_starter/services/application.dart';
+import 'package:flutter_starter/utils/application.dart';
+
+import 'home.model.dart';
 
 class HomeAPI {
   static getHomeData() async {

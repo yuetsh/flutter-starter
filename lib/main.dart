@@ -1,14 +1,9 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/routers/routes.dart';
-import 'package:flutter_starter/services/application.dart';
-import 'package:flutter_starter/services/http.dart';
-import 'package:flutter_starter/widgets/entrance/index.dart';
-
-// 必须顶层，以防性能损耗
-//parseJson(String text) {
-//  return compute(jsonDecode, text);
-//}
+import 'package:flutter_starter/utils/application.dart';
+import 'package:flutter_starter/utils/http.dart';
+import 'package:flutter_starter/utils/routes.dart';
+import 'package:flutter_starter/widgets/shared/entrance/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +13,6 @@ class MyApp extends StatelessWidget {
     final http = new Http();
     Routes.configureRoutes(router);
     Application.router = router;
-//    (http.dio.transformer as DefaultTransformer).jsonDecodeCallback = parseJson;
     Application.http = http.dio;
   }
 

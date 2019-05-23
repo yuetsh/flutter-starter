@@ -1,5 +1,5 @@
 import 'package:fluro/fluro.dart';
-import 'package:flutter_starter/routers/route_handlers.dart';
+import 'route_handlers.dart';
 
 class Routes {
   static String home = "/";

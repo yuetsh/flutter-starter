@@ -1,6 +1,7 @@
-import 'package:flutter_starter/api/home.api.dart';
-import 'package:flutter_starter/model/home/home.dart';
 import 'package:mobx/mobx.dart';
+
+import 'home.api.dart';
+import 'home.model.dart';
 
 part 'home.store.g.dart';
 

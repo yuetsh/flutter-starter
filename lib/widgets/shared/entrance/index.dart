@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_starter/stores/entrance/entrance.store.dart';
+import 'package:flutter_starter/modules/entrance/entrance.store.dart';
 import 'package:flutter_starter/widgets//category/index.dart';
 import 'package:flutter_starter/widgets/home/index.dart';
-import 'package:flutter_starter/widgets/nav_bar/category.dart';
-import 'package:flutter_starter/widgets/nav_bar/home.dart';
-import 'package:flutter_starter/widgets/nav_bar/user_center.dart';
 import 'package:flutter_starter/widgets/user_center/index.dart';
+
+import 'nav_bar/category.dart';
+import 'nav_bar/home.dart';
+import 'nav_bar/user_center.dart';
 
 class _EntranceState extends State<EntranceIndex> {
   List<Widget> _navBars = [HomeNavBar(), CategoryNavBar(), UserCenterNavBar()];
@@ -28,21 +29,20 @@ class _EntranceState extends State<EntranceIndex> {
   ];
 
   Widget builder(BuildContext context) {
-    return CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(
+    return Scaffold(
+      bottomNavigationBar: CupertinoTabBar(
         items: _navItems,
+        currentIndex: entranceStore.index,
         onTap: entranceStore.onTap,
       ),
-      tabBuilder: (BuildContext context, int index) {
-        return CupertinoTabView(
-          builder: (BuildContext context) {
-            return CupertinoPageScaffold(
-              child: _screens[entranceStore.index],
-              navigationBar: _navBars[entranceStore.index],
-            );
-          },
-        );
-      },
+      appBar: PreferredSize(
+        child: _navBars[entranceStore.index],
+        preferredSize: Size.fromHeight(44.0),
+      ),
+      body: IndexedStack(
+        index: entranceStore.index,
+        children: _screens,
+      ),
     );
   }
 

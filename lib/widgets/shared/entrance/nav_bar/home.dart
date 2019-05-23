@@ -5,7 +5,7 @@ class HomeNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoNavigationBar(
-      middle: Text("享换机"),
+      middle: Text("首页"),
     );
   }
 }

@@ -1,11 +1,10 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_starter/routers/routes.dart';
-import 'package:flutter_starter/services/application.dart';
-import 'package:flutter_starter/stores/entrance/entrance.store.dart';
-import 'package:flutter_starter/stores/home/home.store.dart';
+import 'package:flutter_starter/modules/entrance/entrance.store.dart';
+import 'package:flutter_starter/modules/home/home.store.dart';
+import 'package:flutter_starter/utils/application.dart';
+import 'package:flutter_starter/utils/routes.dart';
 
 class HomeIndex extends StatelessWidget {
   @override
