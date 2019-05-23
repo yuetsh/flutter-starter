@@ -6,10 +6,10 @@ class SettingsIndex extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CupertinoNavigationBar(
-        middle: Text("设置"),
+        middle: const Text("设置"),
       ),
       body: Center(
-        child: Text("设置"),
+        child: const Text("设置"),
       ),
     );
   }

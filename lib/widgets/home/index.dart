@@ -1,4 +1,3 @@
-import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_starter/config/config.dart';
@@ -15,13 +14,13 @@ class HomeIndex extends StatelessWidget {
         children: [
           Text('首页:${Config.value.envType}'),
           CupertinoButton(
-            child: Text('去分类页'),
+            child: const Text('去分类页'),
             onPressed: () {
               entranceStore.onTap(1);
             },
           ),
           CupertinoButton(
-            child: Text('获取数据'),
+            child: const Text('获取数据'),
             onPressed: homeStore.getData,
           ),
           Observer(
@@ -31,10 +30,15 @@ class HomeIndex extends StatelessWidget {
                 ),
           ),
           CupertinoButton(
-            child: Text('去设置页'),
+            child: const Text('去设置页'),
             onPressed: () {
-              Service.router.navigateTo(context, Routes.settings,
-                  transition: TransitionType.inFromRight);
+              Service.router.navigateTo(context, Routes.settings);
+            },
+          ),
+          CupertinoButton(
+            child: const Text('WebView'),
+            onPressed: () {
+              Service.router.navigateTo(context, '/activity');
             },
           ),
         ],

@@ -5,7 +5,7 @@ class UserCenterNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoNavigationBar(
-      middle: Text("个人中心"),
+      middle: const Text("个人中心"),
     );
   }
 }

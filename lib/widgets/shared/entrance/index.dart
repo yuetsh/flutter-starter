@@ -16,15 +16,15 @@ class _EntranceState extends State<EntranceIndex> {
   List<BottomNavigationBarItem> _navItems = [
     BottomNavigationBarItem(
       icon: Icon(Icons.home),
-      title: Text('首页'),
+      title: const Text('首页'),
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.category),
-      title: Text('分类'),
+      title: const Text('分类'),
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.person),
-      title: Text('个人'),
+      title: const Text('个人'),
     ),
   ];
 

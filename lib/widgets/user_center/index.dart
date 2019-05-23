@@ -4,7 +4,7 @@ class UserCenterIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('用户中心'),
+      child: const Text('用户中心'),
     );
   }
 }
