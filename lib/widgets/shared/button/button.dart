@@ -8,6 +8,11 @@ class Button extends StatefulWidget {
 class _ButtonState extends State<Button> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: FlatButton(
+        child: Text('Haha'),
+        onPressed: () {},
+      ),
+    );
   }
 }
