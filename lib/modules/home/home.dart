@@ -9,7 +9,7 @@ class Home {
   final String title;
   final bool completed;
 
-  Home({this.userId = 0, this.id = 0, this.title = '', this.completed = false});
+  Home({this.userId, this.id, this.title, this.completed});
 
   factory Home.fromJson(Map<String, dynamic> json) => _$HomeFromJson(json);
 
