@@ -11,7 +11,5 @@ class Routes {
     router.define(home, handler: homeHandler);
     router.define(settings,
         handler: settingsHandler, transitionType: TransitionType.inFromRight);
-    router.define(activity,
-        handler: activityHandler, transitionType: TransitionType.inFromRight);
   }
 }

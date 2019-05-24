@@ -34,13 +34,7 @@ class HomeIndex extends StatelessWidget {
             onPressed: () {
               Service.router.navigateTo(context, Routes.settings);
             },
-          ),
-          CupertinoButton(
-            child: const Text('WebView'),
-            onPressed: () {
-              Service.router.navigateTo(context, '/activity');
-            },
-          ),
+          )
         ],
       ),
     );
