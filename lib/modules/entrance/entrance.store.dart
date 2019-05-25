@@ -4,7 +4,7 @@ part 'entrance.store.g.dart';
 
 class EntranceStore = _EntranceStore with _$EntranceStore;
 
-final entranceStore = EntranceStore();
+final EntranceStore entranceStore = EntranceStore();
 
 abstract class _EntranceStore implements Store {
   @observable

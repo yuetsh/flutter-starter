@@ -8,14 +8,14 @@ class SettingsIndex extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CupertinoNavigationBar(
-        middle: const Text("设置"),
+        middle: const Text("设置页"),
       ),
       body: Center(
         child: Column(
           children: <Widget>[
-            const Text("设置"),
+            const Text("设置页"),
             Observer(
-              builder: (_) => Text(homeStore.data.userId.toString()),
+              builder: (_) => Text(homeStore.title),
             )
           ],
         ),

@@ -7,11 +7,15 @@ part 'home.store.g.dart';
 
 class HomeStore = _HomeStore with _$HomeStore;
 
-final homeStore = HomeStore();
+final HomeStore homeStore = HomeStore();
 
 abstract class _HomeStore implements Store {
   @observable
   Home data = Home();
+
+  get title {
+    return this.data.title;
+  }
 
   @action
   Future<void> getData() async {
